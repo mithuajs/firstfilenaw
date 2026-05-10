@@ -1,0 +1,101 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student System</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <div class="navbar bg-white shadow-md px-5">
+        <div class="dropdown flex-1">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+            </div>
+            <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                <li><a>Homepage</a></li>
+                <li>  <a href="https://github.com/mithuajs" target="_blank" >Portfolio</a></li>
+                <li><a>About</a></li>
+            </ul>
+        </div>
+
+        <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li><a>Teacher</a></li>
+
+                <li>
+                    <details>
+                        <summary>Student</summary>
+                        <ul class="bg-base-100 rounded-t-none p-2 z-50">
+                            <li><a onclick="showLogin()">Login</a></li>
+                            <li><a onclick="showRegister()">Register</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerSection" class="flex justify-center mt-10 hidden">
+        <div class="card bg-white shadow-xl w-96 p-6">
+
+            <h2 class="text-2xl font-bold text-center mb-4">
+                Student Register
+            </h2>
+
+            <input id="name" type="text" placeholder="Student Name" class="input input-bordered w-full mb-3" />
+
+            <input id="father" type="text" placeholder="Father Name" class="input input-bordered w-full mb-3" />
+
+            <input id="mother" type="text" placeholder="Mother Name" class="input input-bordered w-full mb-3" />
+
+            <input id="email" type="email" placeholder="Email" class="input input-bordered w-full mb-3" />
+
+            <input id="phone" type="text" placeholder="Phone Number" class="input input-bordered w-full mb-3" />
+
+            <input id="password" type="password" placeholder="Password" class="input input-bordered w-full mb-3" />
+
+            <button onclick="registerStudent()" class="btn btn-primary w-full">
+                Register
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginSection" class="flex justify-center mt-10 hidden">
+        <div class="card bg-white shadow-xl w-96 p-6">
+
+            <h2 class="text-2xl font-bold text-center mb-4">
+                Student Login
+            </h2>
+
+            <input id="loginInput" type="text" placeholder="Email or Phone Number"
+                class="input input-bordered w-full mb-3" />
+
+            <input id="loginPassword" type="password" placeholder="Password" class="input input-bordered w-full mb-3" />
+
+            <button onclick="loginStudent()" class="btn btn-success w-full">
+                Login
+            </button>
+
+        </div>
+    </div>
+
+    <script type="module" src="./firebase-config.js"></script>
+    <script type="module" src="./script.js"></script>
+
+</body>
+
+</html>
