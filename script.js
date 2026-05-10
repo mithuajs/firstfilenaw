@@ -111,7 +111,9 @@ window.loginStudent = async function () {
             password
         );
 
-        alert("Login Successful!");
+        alert("Login Successful! welcome to Sylhet Polytechnic Institute");
+
+        window.location.href = "https://sylhet.polytech.gov.bd/ "; 
 
     } catch (error) {
         alert("Wrong email/phone or password");
